@@ -2231,11 +2231,12 @@ int create_sock(Address &local_addr, const char *addr, const char *port,
     return -1;
   }
 
-  if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &val,
+ 
+  /*if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &val,
                  static_cast<socklen_t>(sizeof(val))) == -1) {
     close(fd);
     return -1;
-  }
+  }*/
 
   fd_set_recv_ecn(fd, rp->ai_family);
 
